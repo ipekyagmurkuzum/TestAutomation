@@ -22,4 +22,8 @@ public class BaseTests {
     public void tearDown() {
         driver.quit();
     }
+
+    public String getTitleOfThePage(){
+        return driver.getTitle();
+    }
 }
