@@ -26,16 +26,17 @@ public class HomePage {
         return new ForgotPasswordPage(driver);
     }
 
-    public HoversPage clickHovers(){
+    public HoversPage clickHovers() {
         clickLink("Hovers");
         return new HoversPage(driver);
     }
+
     public KeyPressesPage clickKeyPresses() {
         clickLink("Key Presses");
         return new KeyPressesPage(driver);
     }
 
-    public HorizontalSliderPage clickHorizontalSlider(){
+    public HorizontalSliderPage clickHorizontalSlider() {
         clickLink("Horizontal Slider");
         return new HorizontalSliderPage(driver);
     }
@@ -53,6 +54,11 @@ public class HomePage {
     public ContextMenuPage clickContextMenu() {
         clickLink("Context Menu");
         return new ContextMenuPage(driver);
+    }
+
+    public EditorPage clickWYSIWYGEditor() {
+        clickLink("WYSIWYG Editor");
+        return new EditorPage(driver);
     }
 
     private void clickLink(String linkText) {
