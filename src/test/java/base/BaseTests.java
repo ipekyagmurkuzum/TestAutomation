@@ -1,11 +1,15 @@
 package base;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import pages.HomePage;
+import utils.WindowManager;
 
 import java.time.Duration;
 
@@ -18,7 +22,6 @@ public class BaseTests {
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
         driver = new ChromeDriver();
 //      driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-
         goHome();
     }
 
@@ -32,6 +35,11 @@ public class BaseTests {
     public void tearDown() {
         driver.quit();
     }
+
+    public WindowManager getWindowManager() {
+        return new WindowManager(driver);
+    }
+
 
     public String getTitleOfThePage() {
         return driver.getTitle();
